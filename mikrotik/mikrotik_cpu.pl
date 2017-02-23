@@ -94,8 +94,8 @@ else
 if (my $result = retrieve_cpu($np->opts->hostname))
 {
     $np->set_thresholds(
-        warning     => $np->opts->warning //    $warning,
-        critical    => $np->opts->critical //   $critical,
+        warning     => $np->opts->warning   //   $warning,
+        critical    => $np->opts->critical  //   $critical,
     );
 
     $np->add_perfdata(
@@ -130,7 +130,6 @@ else
 {
     $np->plugin_exit( CRITICAL, "could not retrieve cpu usage" );
 }
-
 
 sub retrieve_cpu
 {
